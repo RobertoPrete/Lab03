@@ -5,10 +5,20 @@ import multiDictionary as md
 class SpellChecker:
 
     def __init__(self):
-        pass
+        self.parole_errate = []
+        self.numero_parole_errate = 0
+        self.tempo_controllo_ortografico = 0
 
-    def handleSentence(self, txtIn, language):
-        pass
+    def handleSentence(self, txtIn, language, istanza_md):
+        txtIn = replaceChars(txtIn)
+        lista_parole = txtIn.split(" ")
+        # dizionario = md.MultiDictionary().get(language)
+        # parole_dizionario = dizionario.parole()
+        # self.parole_errate = md.MultiDictionary().searchWord(lista_parole, language)
+        self.parole_errate = istanza_md.searchWord(lista_parole, language)
+        # if istanza_md.searchWord(lista_parole, language) != "":
+        #    self.parole_errate.append(istanza_md.searchWord(lista_parole, language))
+        self.numero_parole_errate = len(self.parole_errate)
 
     def printMenu(self):
         print("______________________________\n" +
@@ -21,6 +31,13 @@ class SpellChecker:
               "4. Exit\n" +
               "______________________________\n")
 
+    def printParoleErrate(self):
+        for parola in self.parole_errate:
+            print(parola)
+
 
 def replaceChars(text):
-    pass
+    chars = "\\'*_{}[]()>#+-.!$%^;,=_~"
+    for c in chars:
+        text = text.replace(c, "")
+    return text
