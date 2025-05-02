@@ -15,6 +15,11 @@ class Dictionary:
         for parola in self.parole:
             print(parola)
 
+    def __contains__(self, item):
+        if item in self.lingua:
+            return True
+        else:
+            return False
     # @property
     # def parole(self):
     #    return self.parole

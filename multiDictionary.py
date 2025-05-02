@@ -18,14 +18,13 @@ class MultiDictionary:
         parole_errate = []
         for word in words:
             rich_word = rw.RichWord(word)
-            if self.multi_dizionario.get(language).parole.__contains__(rich_word):
+            if self.multi_dizionario.get(language).__contains__(rich_word.parola.lower()):
                 # rich_word.corretta(True)     non so perchè se eseguo questa riga non esegue il setter ma il getter
                 rich_word.corretta = True
-                parole_errate.append(rich_word.parola)
-                break
             else:
                 # rich_word.corretta(False)
                 rich_word.corretta = False
+                parole_errate.append(rich_word.parola)
         return parole_errate
 
     def aggiungiDizionario(self, language, dizionario):
