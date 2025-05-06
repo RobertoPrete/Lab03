@@ -15,7 +15,8 @@ class SpellChecker:
         # dizionario = md.MultiDictionary().get(language)
         # parole_dizionario = dizionario.parole()
         # self.parole_errate = md.MultiDictionary().searchWord(lista_parole, language)
-        self.parole_errate = istanza_md.searchWord(lista_parole, language)
+        # self.parole_errate = istanza_md.searchWord(lista_parole, language)
+        self.parole_errate.extend(istanza_md.searchWord(lista_parole, language))
         # if istanza_md.searchWord(lista_parole, language) != "":
         #    self.parole_errate.append(istanza_md.searchWord(lista_parole, language))
         self.numero_parole_errate = len(self.parole_errate)

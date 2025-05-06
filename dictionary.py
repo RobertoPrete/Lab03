@@ -7,7 +7,7 @@ class Dictionary:
     def loadDictionary(self, path):
         file_dizionario = open(path, "r")
         for line in file_dizionario:
-            self.parole.append(line.split())
+            self.parole.extend(line.split())
         file_dizionario.close()
         # return self.parole
 
@@ -15,11 +15,12 @@ class Dictionary:
         for parola in self.parole:
             print(parola)
 
-    def __contains__(self, item):
-        if item in self.lingua:
-            return True
-        else:
-            return False
+    # def __contains__(self, item):
+    #    if item in self.lingua:
+    #        return True
+    #    else:
+    #        return False
+
     # @property
     # def parole(self):
     #    return self.parole

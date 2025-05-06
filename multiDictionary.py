@@ -18,7 +18,8 @@ class MultiDictionary:
         parole_errate = []
         for word in words:
             rich_word = rw.RichWord(word)
-            if self.multi_dizionario.get(language).__contains__(rich_word.parola.lower()):
+            parola = rich_word.parola.lower().strip()
+            if self.multi_dizionario.get(language).parole.__contains__(parola):
                 # rich_word.corretta(True)     non so perchè se eseguo questa riga non esegue il setter ma il getter
                 rich_word.corretta = True
             else:
