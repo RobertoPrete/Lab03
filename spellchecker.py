@@ -12,6 +12,7 @@ class SpellChecker:
     def handleSentence(self, txtIn, language, istanza_md):
         txtIn = replaceChars(txtIn)
         lista_parole = txtIn.split(" ")
+        self.parole_errate = []
         inizio = time.time()
         self.parole_errate.extend(istanza_md.searchWord(lista_parole, language))
         fine = time.time()
