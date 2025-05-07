@@ -1,6 +1,5 @@
 class Dictionary:
     def __init__(self, lingua):
-        # self.parole = self.loadDictionary(f"resources/{lingua}.txt")
         self.parole = []
         self.lingua = lingua
 
