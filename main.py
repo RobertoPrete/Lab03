@@ -23,8 +23,9 @@ while(True):
         print("Inserisci la tua frase in Italiano\n")
         txtIn = input()
         sc.handleSentence(txtIn, "Italian", md)
-        print(f"Le parole errate sono {sc.numero_parole_errate}:")
+        sc.printNumeroParoleErrate("Italian")
         sc.printParoleErrate()
+        sc.printTempoControlloOrtografico("Italian")
         continue
 
     if int(txtIn) == 2:
@@ -33,8 +34,9 @@ while(True):
         print("Inserisci la tua frase in Inglese\n")
         txtIn = input()
         sc.handleSentence(txtIn, "English", md)
-        print(f"The wrong words are {sc.numero_parole_errate}:")
+        sc.printNumeroParoleErrate("English")
         sc.printParoleErrate()
+        sc.printTempoControlloOrtografico("English")
         continue
 
     if int(txtIn) == 3:
@@ -43,8 +45,9 @@ while(True):
         print("Inserisci la tua frase in Spagnolo\n")
         txtIn = input()
         sc.handleSentence(txtIn, "Spanish", md)
-        print(f"Las palabras equivocadas son {sc.numero_parole_errate}:")
+        sc.printNumeroParoleErrate("Spanish")
         sc.printParoleErrate()
+        sc.printTempoControlloOrtografico("Spanish")
         continue
 
     if int(txtIn) == 4:
